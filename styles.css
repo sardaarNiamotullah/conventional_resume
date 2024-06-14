@@ -3,7 +3,7 @@
 body {
   padding: 0;
   margin: 0;
-  background: rgb(95, 89, 95);
+  background: rgb(3, 18, 24);
   font-family: "Fira Code", monospace;
   font-optical-sizing: auto;
   font-size: 13px;
@@ -158,6 +158,19 @@ ul {
 .phone {
   -webkit-mask-image: url(./SVG/phone.svg);
   mask-image: url(./SVG/phone.svg);
+}
+
+a {
+  text-decoration: none;
+  color: rgb(123, 123, 190);
+}
+
+.page-item--right a {
+  color: rgb(123, 123, 190);
+}
+
+.sardaar {
+  font-weight: 100;
 }
 
 /*# sourceMappingURL=styles.css.map */

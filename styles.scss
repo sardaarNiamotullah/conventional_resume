@@ -2,14 +2,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap");
 $fontColor_main: rgb(240, 240, 240);
 $fontColor_secondary: rgb(240, 240, 240);
-
+$link_color: rgb(123, 123, 190);
 $background_main: rgb(150, 158, 172);
 $background_secondary: rgb(40, 40, 60);
 
 body {
   padding: 0;
   margin: 0;
-  background: rgb(95, 89, 95);
+  background: rgb(3, 18, 24);
   font-family: "Fira Code", monospace;
   font-optical-sizing: auto;
   font-size: 13px;
@@ -168,4 +168,19 @@ ul {
 .phone {
   -webkit-mask-image: url(./SVG/phone.svg);
   mask-image: url(./SVG/phone.svg);
+}
+
+a {
+  text-decoration: none;
+  color: $link_color;
+}
+
+.page-item--right {
+  a {
+    color: $link_color;
+  }
+}
+
+.sardaar {
+  font-weight: 100;
 }
