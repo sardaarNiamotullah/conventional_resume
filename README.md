@@ -1,1 +1,1 @@
-### To view the project [**CLICK HERE!**](https://sardaarniamotullah.github.io/conventional_resume/)
+### To view the resume [**CLICK HERE!**](https://sardaarniamotullah.github.io/conventional_resume/)
