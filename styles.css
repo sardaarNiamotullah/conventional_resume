@@ -157,6 +157,11 @@ ul {
   mask-image: url(./SVG/mail.svg);
 }
 
+.whatsapp {
+  -webkit-mask-image: url(./SVG/whatsapp.svg);
+  mask-image: url(./SVG/whatsapp.svg);
+}
+
 .phone {
   -webkit-mask-image: url(./SVG/phone.svg);
   mask-image: url(./SVG/phone.svg);
