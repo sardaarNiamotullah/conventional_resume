@@ -137,6 +137,12 @@ ul {
     width: 40%;
     border-radius: 0px 5px 5px 0px;
   }
+  h3.attention {
+    width: 100%;
+    text-align: center;
+    border-radius: 0px 0px 0px 0px;
+    color: rgb(0, 255, 42);
+  }
 }
 
 .logocage {
@@ -193,4 +199,20 @@ a {
 
 .gpa {
   margin-top: -5px;
+}
+
+.attention_list {
+  width: 70%;
+  list-style-type: disc; // Adds bullet points to the left
+  margin: 0 auto; // Adds space around the list
+  padding-left: 40px; // Ensures bullet points are indented properly
+
+  li {
+    margin-bottom: 10px; // Adds space between list items
+    // text-indent: -25px; // Pulls the bullet point out to align text properly
+    padding-left: 25px; // Ensures the text starts from the same position
+    line-height: 1.6; // Improves readability with proper spacing between lines
+    text-align: left;
+    font-weight: bold;
+  }
 }

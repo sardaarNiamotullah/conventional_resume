@@ -125,6 +125,12 @@ ul {
   width: 40%;
   border-radius: 0px 5px 5px 0px;
 }
+.page-item--left h3.attention {
+  width: 100%;
+  text-align: center;
+  border-radius: 0px 0px 0px 0px;
+  color: rgb(0, 255, 42);
+}
 
 .logocage {
   display: flex;
@@ -182,6 +188,20 @@ a {
 
 .gpa {
   margin-top: -5px;
+}
+
+.attention_list {
+  width: 70%;
+  list-style-type: disc;
+  margin: 0 auto;
+  padding-left: 40px;
+}
+.attention_list li {
+  margin-bottom: 10px;
+  padding-left: 25px;
+  line-height: 1.6;
+  text-align: left;
+  font-weight: bold;
 }
 
 /*# sourceMappingURL=styles.css.map */
