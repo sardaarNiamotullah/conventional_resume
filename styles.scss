@@ -1,56 +1,440 @@
+@use "sass:color";
 @import url("https://fonts.googleapis.com/css2?family=Bellota:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Fira+Code:wght@300..700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Amaranth:ital,wght@0,400;0,700;1,400;1,700&family=Geist+Mono:wght@100..900&display=swap");
+
+// SCSS Variables
 $fontColor_main: rgb(240, 240, 240);
 $fontColor_secondary: rgb(240, 240, 240);
 $link_color: rgb(123, 123, 190);
 $background_main: rgb(150, 158, 172);
 $background_secondary: rgb(40, 40, 60);
+$neon_green: rgb(0, 255, 42);
+$body_bg: rgb(3, 18, 24);
+
+// Mixins
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin section-title {
+  background: $background_secondary;
+  color: $fontColor_main;
+  border-radius: 0px 5px 5px 0px;
+  margin-bottom: 20px;
+  padding: 3px 20px;
+  // height: 10px;
+}
+
+@mixin reset-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
 
 body {
   padding: 0;
   margin: 0;
-  background: rgb(3, 18, 24);
-  font-family: "Fira Code", monospace;
+  background: $body_bg;
+  font-family: "Amaranth", sans-serif;
   font-optical-sizing: auto;
   font-size: 13px;
 }
+
 .page {
   width: 1050px;
   margin: 0 auto;
-
-  display: grid;
-  grid-template-columns: 4fr 2fr;
-  grid-template-rows: 120px;
-
   color: $background_secondary;
+}
 
-  &-item {
-    background: $fontColor_main;
+/* New full-width header section */
+.full-width-header {
+  width: 100%;
+  background: $fontColor_main;
+  margin-bottom: 0;
 
-    &--title {
-      justify-content: center;
-      text-align: center;
+  .page-item--title {
+    padding: 20px;
+    text-align: center;
 
-      grid-column: 1 / 2;
-      grid-row: 1 / 2;
+    &--websiteline {
+      text-align: right;
+      margin-top: -1.2rem;
+      margin-bottom: 0rem;
+      font-size: 12px;
+      width: 300px;
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: 3px;
+      padding: 0 5px;
+      color: $fontColor_main;
+      background-color: $background_secondary;
+
+      &-link {
+        color: $neon_green;
+        font-weight: lighter;
+        text-decoration: none;
+        transition: all 0.2s ease;
+
+        &:hover {
+          text-decoration: underline;
+          color: $fontColor_main;
+        }
+      }
     }
+  }
 
-    &--left {
-      grid-column: 1 / 2;
-      grid-row: 2 / 3;
-    }
+  .skills-dedication {
+    max-width: 800px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
 
-    &--right {
-      background: $background_secondary;
-      color: $fontColor_secondary;
-      grid-column: 2 / 3;
-      grid-row: 1 / 3;
+    .skills-text {
+      margin: 0;
+      line-height: 1.6;
     }
   }
 }
+
+/* Content container for the two-column layout */
+.content-container {
+  display: grid;
+  grid-template-columns: 5fr 2fr;
+  gap: 0px;
+  background: $fontColor_main;
+  padding: 0;
+}
+
+.page-item {
+  background: $fontColor_main;
+
+  &--left {
+    padding: 0px;
+  }
+
+  &--right {
+    background: $background_secondary;
+    color: $fontColor_secondary;
+    display: flex;
+    text-align: center;
+    padding: 20px;
+
+    li {
+      margin: 3px 0;
+    }
+
+    h3 {
+      margin: 25px 0;
+      background: $fontColor_main;
+      color: $background_secondary;
+      border-radius: 5px;
+      padding: 3px;
+    }
+
+    a {
+      color: $link_color;
+    }
+  }
+}
+
+.projects-education-container {
+  display: flex;
+  margin-bottom: 5px;
+
+  .project {
+    flex: 1;
+    width: 50%;
+
+    .section-title {
+      @include section-title;
+      width: 70%;
+      margin-left: 0;
+    }
+
+    .projects-list {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    &-item {
+      padding: 15px 15px 8px 20px;
+      border-radius: 0 5px 5px 0;
+      position: relative;
+      width: 70%;
+      overflow: hidden;
+      margin-left: 10px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 3px;
+        background-color: $background_secondary;
+      }
+
+      h4 {
+        margin: 0 0 10px 0;
+
+        a {
+          color: color.scale($link_color, $lightness: -20%);
+          text-decoration: none;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+
+    &-description {
+      margin-bottom: 10px;
+      line-height: 1.5;
+      font-size: 0.95em;
+    }
+
+    &-tech {
+      margin-bottom: 10px;
+      font-size: 0.9em;
+      color: $background_secondary;
+
+      strong {
+        color: $background_secondary;
+      }
+    }
+
+    &-links {
+      a {
+        color: $link_color;
+        text-decoration: none;
+        margin-right: 10px;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  // Education and Certifications section (50% width)
+  .education-certifications {
+    flex: 1;
+    width: 50%;
+
+    .education {
+      margin-bottom: 30px;
+
+      .section-title.edu {
+        @include section-title;
+        width: 70%;
+        text-align: right;
+        border-radius: 5px 0 0 5px;
+        margin-bottom: 20px;
+        margin-left: auto;
+        margin-right: 0;
+      }
+
+      &-content {
+        .uni {
+          text-align: right;
+          padding-right: 20px;
+          border-radius: 0px;
+          position: relative;
+          overflow: hidden;
+          margin-bottom: 15px;
+          margin-right: 10px;
+
+          // Full-height right border using pseudo-element
+          &::before {
+            content: "";
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background-color: $background_secondary;
+          }
+
+          h4 {
+            margin-bottom: 5px;
+          }
+
+          .organisation {
+            margin-top: 0px;
+            font-style: italic;
+            color: $background_secondary;
+          }
+
+          .year {
+            margin-top: 0px;
+            font-size: 0.9em;
+          }
+
+          .result {
+            margin-top: -8px;
+            font-weight: bold;
+            color: $background_secondary;
+          }
+        }
+      }
+
+      &-about {
+        text-align: right;
+        width: 70%;
+        margin-left: auto;
+        margin-right: 10px;
+
+        padding-right: 20px;
+        border-radius: 5px 0px 0px 5px;
+        position: relative;
+        overflow: hidden;
+
+        &::before {
+          content: "";
+          position: absolute;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          width: 3px;
+          background-color: $background_secondary;
+        }
+      }
+    }
+
+    .certificate {
+      .section-title {
+        @include section-title;
+        width: 70%;
+        text-align: right;
+        border-radius: 5px 0 0 5px;
+        margin-bottom: 20px;
+        margin-left: auto;
+        margin-right: 0;
+      }
+
+      // First certification (Web Development Bootcamp) - full width
+      .uni {
+        margin-bottom: 20px;
+        text-align: right;
+
+        h4 {
+          margin-bottom: 10px;
+          color: $background_secondary;
+        }
+
+        ul {
+          @include reset-list;
+
+          li {
+            padding-right: 20px; // Extra right padding for the border
+            border-radius: 5px 0 0 5px; // Only round left corners
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 10px;
+            text-align: right;
+
+            // Full-height right border using pseudo-element
+            &::before {
+              content: "";
+              position: absolute;
+              right: 0;
+              top: 0;
+              bottom: 0;
+              width: 5px;
+              background-color: $background_secondary;
+            }
+
+            a {
+              color: $link_color;
+              text-decoration: none;
+              font-size: 0.9em;
+              line-height: 1.4;
+
+              &:hover {
+                text-decoration: underline;
+              }
+            }
+
+            .year {
+              margin-top: 5px;
+              font-size: 0.85em;
+              color: color.scale($background_secondary, $lightness: 20%);
+            }
+          }
+        }
+      }
+
+      // Row-wise layout for remaining certifications
+      .cert-flex {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        &--child {
+          width: 70%;
+          margin-left: auto;
+          margin-right: 10px;
+
+          .udemy,
+          .coursera {
+            @include reset-list;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            li {
+              padding-right: 20px; // Extra right padding for the border
+              border-radius: 5px 0 0 5px; // Only round left corners
+              position: relative;
+              overflow: hidden;
+              text-align: right;
+
+              // Full-height right border using pseudo-element
+              &::before {
+                content: "";
+                position: absolute;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                width: 3px;
+                background-color: $background_secondary;
+              }
+
+              a {
+                color: $link_color;
+                text-decoration: none;
+                font-size: 0.9em;
+                line-height: 1.4;
+
+                &:hover {
+                  text-decoration: underline;
+                }
+              }
+
+              .year {
+                margin-top: 5px;
+                font-size: 0.85em;
+                color: color.scale($background_secondary, $lightness: 20%);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// General styles
 .flex {
   display: flex;
   justify-content: space-evenly;
+
   &--child {
     width: 40%;
 
@@ -59,43 +443,35 @@ body {
     }
   }
 }
+
 .center_text {
   text-align: center;
 }
+
 ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
+  @include reset-list;
 }
+
 .coursera,
-.discription {
+.udemy {
   padding: 0;
   margin: 0;
+
   li {
     text-align: left;
     padding-left: 0;
     margin-left: 0;
   }
 }
+
 .organisation,
 .year {
   margin-top: -15px;
 }
-.certificate .year {
-  margin-top: 0;
-}
-.edu {
-  margin-bottom: 40px;
-}
-.project {
-  li:not(:last-child) {
-    height: 52px;
-  }
-  margin-bottom: 20px;
-}
+
 .certificate {
-  li:not(:last-child) {
-    height: 65px;
+  .year {
+    margin-top: 0;
   }
 }
 
@@ -105,81 +481,100 @@ ul {
     width: 180px;
     height: 180px;
     border-radius: 50%;
-
     border: 3px solid $fontColor_secondary;
-  }
-}
-
-.page-item--right {
-  display: flex;
-  //align-items: center;
-  text-align: center;
-  padding: 20px;
-
-  li {
-    margin-top: 3px;
-    margin-bottom: 3px;
-  }
-
-  h3 {
-    margin-top: 25px;
-    margin-bottom: 25px;
-    background: $fontColor_main;
-    color: $background_secondary;
-    border-radius: 5px;
   }
 }
 
 .page-item--left {
   h3 {
-    background: $background_secondary;
-    color: $fontColor_main;
+    @include section-title;
     width: 40%;
-    border-radius: 0px 5px 5px 0px;
-  }
-  h3.attention {
-    width: 100%;
-    text-align: center;
-    border-radius: 0px 0px 0px 0px;
-    color: rgb(0, 255, 42);
+
+    &.attention {
+      width: 100%;
+      text-align: center;
+      border-radius: 0;
+      color: $neon_green;
+      background: $background_secondary;
+      margin-top: 0;
+    }
   }
 }
 
 .logocage {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include flex-center;
   margin-bottom: 3px;
+
+  &_left {
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    margin-bottom: 3px;
+  }
+}
+
+.logo_left {
+  height: 15px;
+  width: 15px;
+  mask-size: cover;
+  -webkit-mask-size: cover;
+  background: $link_color;
+  margin-right: 4px;
+  margin-left: 0px;
+  list-style-type: none;
+
+  &.git_left {
+    mask-image: url(./SVG/github.svg);
+    -webkit-mask-image: url(./SVG/github.svg);
+  }
+
+  &.youtube {
+    mask-image: url(./SVG/youtube2.svg);
+    -webkit-mask-image: url(./SVG/youtube2.svg);
+  }
+
+  &.web_left {
+    mask-image: url(./SVG/web.svg);
+    -webkit-mask-image: url(./SVG/web.svg);
+  }
 }
 
 .logo {
   height: 15px;
   width: 15px;
-  -webkit-mask-size: cover;
   mask-size: cover;
+  -webkit-mask-size: cover;
   background: $fontColor_secondary;
   margin-right: 8px;
-}
 
-.git {
-  -webkit-mask-image: url(./SVG/github.svg);
-  mask-image: url(./SVG/github.svg);
-}
-.in {
-  -webkit-mask-image: url(./SVG/linkedin.svg);
-  mask-image: url(./SVG/linkedin.svg);
-}
-.mail {
-  -webkit-mask-image: url(./SVG/mail.svg);
-  mask-image: url(./SVG/mail.svg);
-}
-.whatsapp {
-  -webkit-mask-image: url(./SVG/whatsapp.svg);
-  mask-image: url(./SVG/whatsapp.svg);
-}
-.phone {
-  -webkit-mask-image: url(./SVG/phone.svg);
-  mask-image: url(./SVG/phone.svg);
+  &.git {
+    mask-image: url(./SVG/github.svg);
+    -webkit-mask-image: url(./SVG/github.svg);
+  }
+
+  &.in {
+    mask-image: url(./SVG/linkedin.svg);
+    -webkit-mask-image: url(./SVG/linkedin.svg);
+  }
+
+  &.mail {
+    mask-image: url(./SVG/mail.svg);
+    -webkit-mask-image: url(./SVG/mail.svg);
+  }
+
+  &.whatsapp {
+    mask-image: url(./SVG/whatsapp.svg);
+    -webkit-mask-image: url(./SVG/whatsapp.svg);
+  }
+
+  &.phone {
+    mask-image: url(./SVG/phone.svg);
+    -webkit-mask-image: url(./SVG/phone.svg);
+  }
+  &.web {
+    mask-image: url(./SVG/web.svg);
+    -webkit-mask-image: url(./SVG/web.svg);
+  }
 }
 
 a {
@@ -187,32 +582,29 @@ a {
   color: $link_color;
 }
 
-.page-item--right {
-  a {
-    color: $link_color;
-  }
-}
-
 .sardaar {
   font-weight: 100;
 }
 
-.gpa {
-  margin-top: -5px;
-}
-
 .attention_list {
   width: 70%;
-  list-style-type: disc; // Adds bullet points to the left
-  margin: 0 auto; // Adds space around the list
-  padding-left: 40px; // Ensures bullet points are indented properly
+  list-style-type: disc;
+  margin: 0 auto;
+  padding-left: 40px;
 
   li {
-    margin-bottom: 10px; // Adds space between list items
-    // text-indent: -25px; // Pulls the bullet point out to align text properly
-    padding-left: 25px; // Ensures the text starts from the same position
-    line-height: 1.6; // Improves readability with proper spacing between lines
+    margin-bottom: 10px;
+    padding-left: 25px;
+    line-height: 1.6;
     text-align: left;
     font-weight: bold;
   }
+}
+
+.udc_title {
+  margin-right: 100px;
+}
+
+.page-item--right li {
+  margin-right: 8px;
 }
