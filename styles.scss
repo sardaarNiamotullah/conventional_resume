@@ -563,6 +563,10 @@ ul {
     mask-image: url(./SVG/locked.svg);
     -webkit-mask-image: url(./SVG/locked.svg);
   }
+  &.git_left {
+    mask-image: url(./SVG/github.svg);
+    -webkit-mask-image: url(./SVG/github.svg);
+  }
 }
 
 .logo {
@@ -809,4 +813,18 @@ a {
   text-align: right;
   margin-left: auto;
   margin-right: 0;
+}
+
+.tempTech {
+  margin-bottom: 10px;
+  font-size: 0.9em;
+  color: $background_secondary;
+  width: 262.5px;
+  text-align: right;
+  margin-left: auto;
+  margin-right: 0;
+
+  strong {
+    color: $background_secondary;
+  }
 }

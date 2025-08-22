@@ -478,6 +478,10 @@ ul {
   mask-image: url(./SVG/locked.svg);
   -webkit-mask-image: url(./SVG/locked.svg);
 }
+.logo_right.git_left {
+  mask-image: url(./SVG/github.svg);
+  -webkit-mask-image: url(./SVG/github.svg);
+}
 
 .logo {
   height: 15px;
