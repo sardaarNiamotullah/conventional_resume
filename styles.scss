@@ -751,15 +751,15 @@ a {
     .bullet-point {
       width: 6px;
       height: 6px;
-      background-color: $background_secondary;
+      background-color: gray;
       border-radius: 50%;
       margin-top: 6px;
       flex-shrink: 0;
     }
 
     .connecting-line {
-      width: 1.5px;
-      background-color: $background_secondary;
+      width: 1px;
+      background-color: gray;
       flex-grow: 1;
       margin-top: 5px;
       min-height: 20px;

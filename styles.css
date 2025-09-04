@@ -646,14 +646,14 @@ a {
 .experience-section .timeline-bullet .bullet-point {
   width: 6px;
   height: 6px;
-  background-color: rgb(40, 40, 60);
+  background-color: gray;
   border-radius: 50%;
   margin-top: 6px;
   flex-shrink: 0;
 }
 .experience-section .timeline-bullet .connecting-line {
-  width: 1.5px;
-  background-color: rgb(40, 40, 60);
+  width: 1px;
+  background-color: gray;
   flex-grow: 1;
   margin-top: 5px;
   min-height: 20px;
@@ -699,6 +699,19 @@ a {
   text-align: right;
   margin-left: auto;
   margin-right: 0;
+}
+
+.tempTech {
+  margin-bottom: 10px;
+  font-size: 0.9em;
+  color: rgb(40, 40, 60);
+  width: 262.5px;
+  text-align: right;
+  margin-left: auto;
+  margin-right: 0;
+}
+.tempTech strong {
+  color: rgb(40, 40, 60);
 }
 
 /*# sourceMappingURL=styles.css.map */
