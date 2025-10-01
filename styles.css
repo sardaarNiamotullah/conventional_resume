@@ -463,6 +463,10 @@ ul {
   mask-image: url(./SVG/locked.svg);
   -webkit-mask-image: url(./SVG/locked.svg);
 }
+.logo_left.playstore_left {
+  mask-image: url(./SVG/playstore.svg);
+  -webkit-mask-image: url(./SVG/playstore.svg);
+}
 
 .logo_right {
   height: 15px;
@@ -498,6 +502,14 @@ ul {
 .logo.in {
   mask-image: url(./SVG/linkedin.svg);
   -webkit-mask-image: url(./SVG/linkedin.svg);
+}
+.logo.leetcode {
+  mask-image: url(./SVG/leetcode.svg);
+  -webkit-mask-image: url(./SVG/leetcode.svg);
+}
+.logo.codeforces {
+  mask-image: url(./SVG/codeforces.svg);
+  -webkit-mask-image: url(./SVG/codeforces.svg);
 }
 .logo.mail {
   mask-image: url(./SVG/mail.svg);
